@@ -1,0 +1,9 @@
+// schema.prisma
+datasource db {
+  provider = "postgresql"
+  url      = env("postgresql://abhiujjwalpradantgres:1212@localhost:5432/postgres")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
