@@ -8,6 +8,7 @@ router.post(
   "/signup",
   [
     check("email", "Please provide valid Email").isEmail(),
+
     check(
       "password",
       "please provide password greater then 5 character"
@@ -17,10 +18,12 @@ router.post(
   ],
   async (req, res) => {
     const { password, email } = req.body;
+    console.log("signup1");
 
     const errors = validationResult(req); //validte the input
 
     if (!errors.isEmpty()) {
+      console.log("errorr ch");
       return res.status(400).json({
         errors: errors.array(),
       });
@@ -29,7 +32,7 @@ router.post(
     let user = users.find((user) => {
       return user.email === email;
     });
-
+    console.log("signup2");
     if (user) {
       return res.status(400).json({
         errors: [
@@ -95,7 +98,8 @@ router.post("/login", async (req, res) => {
     {
       email,
     },
-    process.env.SECRET_KEY,
+        "hhhihi4hi3h43h4h34nngjij98jjj"
+    ,
     {
       expiresIn: 3600000,
     }

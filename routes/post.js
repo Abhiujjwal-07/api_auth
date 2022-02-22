@@ -3,10 +3,10 @@ const { publicPosts, privatePost } = require("../db");
 const checkAuth = require("../middleware/checkAuth");
 
 router.get("/public", (req, res) => {
-    res.json(publicPosts);
+  res.json(publicPosts);
 });
 router.get("/private", checkAuth, (req, res) => {
-    res.json(privatePost);
+  res.json(privatePost);
 });
 
 module.exports = router;
