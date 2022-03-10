@@ -19,3 +19,6 @@ app.get("/", (req, res) => {
 app.listen(3300, () => {
   console.log("listening on 3300");
 });
+//docker run -it -p 3300:3300 auth
+//docker run -d -p 3300:3300 auth
+//docker build -t auth .  
